@@ -1,0 +1,5 @@
+HomeController.class
+RegisterController.class
+config\TemplateEngineUtil.class
+LoginController.class
+config\ThymeleafConfig.class
