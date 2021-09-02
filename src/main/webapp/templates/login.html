@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>login</title>
-</head>
+<div th:insert="fragments/header.html :: header" xmlns="http://www.w3.org/1999/html"> </div>
 <body>
 
 
@@ -11,13 +6,22 @@
 <div th:if="${session.name != null}" th:utext="${'Logged in as <strong>' + session.name + '</strong>'}">Logged in</div>
 <div th:if="${session.name != null}"><a href="/logout">Logout</a></div>
 <div th:unless = "${session.name !=null}">
-<form method="post" action="/login">
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username">
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password">
-  <input value="submit" type="Submit">
-</form>
+  <div class="container">
+  <div class="jumbotron">
+  <form action="/login" method="post">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" name="username" aria-describedby="usName" placeholder="Enter your login username">
+      <small id="usName" class="form-text text-muted">We'll never share your username with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  </div>
 </div>
 
 
